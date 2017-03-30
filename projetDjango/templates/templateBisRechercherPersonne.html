@@ -1,0 +1,89 @@
+{%  extends 'templateBis.html' %}
+
+
+
+{% block body_titre %}
+	<h2 class="text-center">Rechercher une personne</h2>
+{% endblock %}
+
+
+{% block body_contenu %}
+
+	<div class="col-sm-4" class="text-center">
+		<form role="form" action="rechercherPersonne" method="post">
+			{% csrf_token %}
+			<div class="form-group">
+				<label for="InputName">Nom</label>
+				<div class="input-group">
+					<input type="text" class="form-control" name="nom" placeholder="Nom">
+				</div>
+			</div>
+							
+			<div class="form-group">
+				<label for="InputName">Prénom</label>
+				<div class="input-group">
+					<input type="text" class="form-control" name="prenom" placeholder="Prénom">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="InputName">Genre</label>
+				<div class="input-group">
+					<input type="radio" name="genre" value="M"> M
+							<input type="radio" style="margin-left:20px;" name="genre" value="F"> F<br/>
+				</div>
+			</div>
+							
+			<div class="form-group">
+				<label for="InputName">Nationalité</label>
+				<div class="input-group">
+					<input type="text" class="form-control" name="nationalite" placeholder="Nationalité">
+				</div>
+			</div>
+							
+			<div class="form-group">
+				<label for="InputName">Lieux Habités</label>
+				<div class="input-group">
+					<input type="text" class="form-control" name="lieux" placeholder="Lieux Habités">
+				</div>
+			</div>
+		
+			<div class="form-group">
+				<label for="InputName">Date de Naissance</label>
+				<div class="input-group">
+					<input type="text" class="form-control" name="ddn" placeholder="Date de Naissance">
+				</div>
+			</div>
+							
+			<div class="form-group">
+				<label for="InputName">Date de Mariage</label>
+				<div class="input-group">
+					<input type="text" class="form-control" name="ddm" placeholder="Date de Mariage">
+				</div>
+			</div>
+							
+			<div class="form-group">
+				<label for="InputName">Date de Décès</label>
+				<div class="input-group">
+					<input type="text" class="form-control" name="ddd" placeholder="Date de Décès">
+				</div>
+			</div>
+							
+			<div class="form-group">
+				<label for="InputName"> </label>
+				<div class="input-group">
+					<input type="submit" value="Rechercher" class="btn wow tada btn-embossed btn-primary">
+				</div>
+			</div>	
+		</form>				
+	</div> 
+
+
+
+	<div class="col-sm-8" class="text-center">
+		<h3>Résultat</h3>
+		{{ droite_resultat|safe }}
+	</div>
+
+
+{% endblock %}

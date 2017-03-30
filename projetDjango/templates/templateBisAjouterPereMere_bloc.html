@@ -1,0 +1,33 @@
+{%  extends 'templateBis.html' %}
+
+
+
+{% block body_titre %}
+	<h2 class="text-center">Indiquer mes parents</h2>
+{% endblock %}
+
+
+{% block body_contenu %}
+	<h3>Nom de ma famille<h3>
+
+	Le test :<br/>
+	{{ test }}
+
+	<form action="enregistrerPereMere" method="post">
+		{% csrf_token %}
+
+		<span>Père :</span>
+		<SELECT name="pere" size="1">
+		{{ contenu_select_pere|safe }}
+		</SELECT><br/>
+
+		<span>Mère :</span>
+		<SELECT name="mere" size="1">
+		{{ contenu_select_mere|safe}}
+		</SELECT><br/><br/>
+
+		<input type="submit" value="Enregistrer">
+
+	</form>
+
+{% endblock %}

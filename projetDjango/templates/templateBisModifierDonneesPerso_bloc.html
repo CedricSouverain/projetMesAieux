@@ -1,0 +1,56 @@
+{%  extends 'templateBisModifierDonneesPerso.html' %}
+
+{% block body_identifiant %}
+	<script type="text/javascript">
+		{{ alertJs|safe }}
+	</script>
+
+	{{ identifiant }}
+{% endblock %}
+
+{% block body_mail %}
+	<input type='text' class="form-control" id="InputName" name='mail' value="{{ mail }}" required>
+{% endblock %}
+
+{% block body_mdp1 %}
+	<input type="password" class="form-control" id="InputName" name="password1" value="{{ mdp1 }}" required>
+{% endblock %}
+
+{% block body_mdp2 %}
+	<input type="password" class="form-control" id="InputName" name="password2" value="{{ mdp2 }}" required>
+{% endblock %}
+
+
+{% block body_prenom %}
+	<input type="text" class="form-control" id="InputName" name="prenom" value="{{ prenom }}" required>
+{% endblock %}
+
+{% block body_nom %}
+	<input type="text" class="form-control" id="InputName" name="nom" value="{{ nom }}" required>
+{% endblock %}
+
+{% block body_genre %}
+	<input type="radio" name="genre" value="M" {{ body_genre_male }}> M
+	<input type="radio" style="margin-left:20px;" name="genre" value="F" {{ body_genre_femme }}> F<br/>
+{% endblock %}
+
+{% block body_nationalite %}
+	<input type="text" class="form-control" id="InputName" name="nationalite" value="{{ nationalite }}" required>
+{% endblock %}
+
+{% block body_lieux %}
+	<input type="text" class="form-control" id="InputName" name="lieux" value="{{ lieux }}" required>
+{% endblock %}
+
+{% block body_ddn %}
+	<input type="text" class="form-control" id="InputName" name="ddn" value="{{ ddn }}" required>
+{% endblock %}
+
+{% block body_ddm %}
+	<input type="text" class="form-control" id="InputName" name="ddm" value="{{ ddm }}">
+{% endblock %}
+
+{% block body_ddd %}
+	<input type="text" class="form-control" id="InputName" name="ddd" value="{{ ddd }}">
+{% endblock %}
+

@@ -1,0 +1,87 @@
+{%  extends 'templateBis.html' %}
+
+
+
+{% block body_titre %}
+	<h2 class="text-center">Ajouter un document</h2>
+{% endblock %}
+
+
+{% block body_contenu %}
+<form class="" role="form" action="ajouterDocument" method="post">
+{% csrf_token %}
+	<div class="col-sm-6" class="text-center">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="InputName">Titre*</label>
+						<div class="input-group">
+							<input type="text" class="form-control" id="InputName" name="titre" placeholder="Titre" required>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="InputName">Année du document*</label>
+						<div class="input-group">
+							<input type="text" class="form-control" id="InputName" name="annee" placeholder="Année du document" required>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="InputName">Type du document*</label>
+						<div class="input-group">
+							<input type="radio" name="typeDocument" value="texte" checked="checked"> Texte
+							<input type="radio" style="margin-left:20px;" name="typeDocument" value="image"> Image<br/>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="InputName">Source du document</label>
+						<div class="input-group">
+							<input type="text" class="form-control" id="InputName" name="source" placeholder="Source du document">
+						</div>
+					</div>
+				</div>
+		</div> 
+
+		<div class="col-sm-6 pull-right">   
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="InputName">Nom personne liée</label>
+						<div class="input-group">
+							<input type="text" class="form-control" id="InputName" name="nompl" placeholder="Nom personne liée">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="InputName">Prénom personne liée</label>
+						<div class="input-group">
+							<input type="text" class="form-control" name="prenompl" id="InputName" placeholder="Prénom personne liée">
+						</div>
+					</div>	
+
+					<div class="form-group">
+						<label for="InputName">Mots clefs</label>
+						<div class="input-group">
+							<input type="text" class="form-control" name="motsclefs" id="InputName" placeholder="Mots clefs">
+						</div>
+					</div>		
+				</div>
+		</div>  
+
+		<div class="col-sm-6" style="clear:both;">   
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="InputName">Description*</label>
+						<div class="input-group">
+							<textarea class="form-control" id="InputName" name="description"></textarea>
+						</div>
+					</div>	
+				</div>
+		</div>  
+    </div>
+
+
+    <input type="submit" name="validerAjout" value="Ajouter" class="btn wow tada btn-embossed btn-primary pull-right">
+
+</form>
+{% endblock %}

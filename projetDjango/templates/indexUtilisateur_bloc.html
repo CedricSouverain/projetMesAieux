@@ -1,0 +1,51 @@
+{%  extends 'indexUtilisateur.html' %}
+
+
+{%  block body_identifiant %}
+    {{ identifiant }}
+{%  endblock %}
+
+{%  block body_nom %}
+    {{ nom }}
+{%  endblock %}
+
+{%  block body_prenom %}
+    {{ prenom }}
+{%  endblock %}
+
+{%  block body_nationalite %}
+    {{ nationalite }}
+{%  endblock %}
+
+{%  block body_genre %}
+    {{ genre }}
+{%  endblock %}
+
+{%  block body_lieux %}
+    {{ lieux }}
+{%  endblock %}
+
+{%  block body_ddn %}
+    {{ ddn }}
+{%  endblock %}
+
+{%  block body_ddm %}
+    {{ ddm }}
+{%  endblock %}
+
+{%  block body_ddd %}
+    {{ ddd }}
+{%  endblock %}
+
+{% block body_famille %}
+	{{ famille }}
+{% endblock %}
+
+{% block body_pere %}
+	{{ pere|safe }}
+{% endblock %}
+
+{% block body_mere %}
+	{{ mere|safe }}
+{% endblock %}
+

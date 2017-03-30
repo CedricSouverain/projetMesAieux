@@ -1,0 +1,79 @@
+{%  extends 'templateBis.html' %}
+
+
+
+{% block body_titre %}
+	<h2 class="text-center">Information sur {{ prenom }} {{ nom }}</h2>
+{% endblock %}
+
+
+{% block body_contenu %}
+
+<form role="form" action="" method="post">
+	{% csrf_token %}
+		<div class="col-sm-6" class="text-center">
+			<div class="form-group">
+				<label for="InputName">Nom</label>
+				<div class="input-group">
+					{{ nom }}
+				</div>
+			</div>
+							
+			<div class="form-group">
+				<label for="InputName">Prénom</label>
+				<div class="input-group">
+					{{ prenom }}
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="InputName">Genre</label>
+				<div class="input-group">
+					{{ genre }}
+				</div>
+			</div>
+							
+			<div class="form-group">
+				<label for="InputName">Nationalité</label>
+				<div class="input-group">
+					{{ nationalite }}
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-sm-6" class="text-center">
+			<div class="form-group">
+				<label for="InputName">Lieux Habités</label>
+				<div class="input-group">
+					{{ lieux }}
+				</div>
+			</div>
+		
+			<div class="form-group">
+				<label for="InputName">Date de Naissance</label>
+				<div class="input-group">
+					{{ ddn }}
+				</div>
+			</div>
+							
+			<div class="form-group">
+				<label for="InputName">Date de Mariage</label>
+				<div class="input-group">
+					{{ ddm }}
+				</div>
+			</div>
+							
+			<div class="form-group">
+				<label for="InputName">Date de Décès</label>
+				<div class="input-group">
+					{{ ddd }}
+				</div>
+			</div>
+							
+		</div>
+							
+		</form>				
+	</div> 
+
+
+{% endblock %}

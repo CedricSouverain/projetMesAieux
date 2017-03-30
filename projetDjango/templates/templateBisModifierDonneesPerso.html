@@ -1,0 +1,118 @@
+{%  extends 'templateBis.html' %}
+
+
+
+{% block body_titre %}
+	<h2 class="text-center">Modifier ses données personnelles</h2>
+{% endblock %}
+
+
+{% block body_contenu %}
+<form class="" role="form" action="validerModificationDonneesPerso" method="post">
+{% csrf_token %}
+<div class="col-sm-6" class="text-center">
+		<div class="col-md-6">
+			<div class="form-group">
+				<label for="InputName">Identifiant*</label>
+				<div class="input-group">
+					{% block body_identifiant %}{% endblock %}
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="InputName">Mail*</label>
+				<div class="input-group">
+					{% block body_mail %}{% endblock %}
+				</div>
+			</div>
+		</div>
+</div> 
+<div class="col-sm-6" class="text-center">
+	<div class="col-md-6">
+		<div class="form-group">
+			<label for="InputName">Mot de passe*</label>
+			<div class="input-group">
+				{% block body_mdp1 %}{% endblock %}
+			</div>
+
+			<label for="InputName">Vérification mot de passe*</label>
+			<div class="input-group">
+				{% block body_mdp2 %}{% endblock %}
+			</div>
+		</div>
+	</div>
+</div>
+
+<h3 class="text-center">Données personnelles</h2>
+
+	<div class="col-sm-6" class="text-center">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="InputName">Prénom*</label>
+						<div class="input-group">
+							{% block body_prenom %}{% endblock %}
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="InputName">Nom*</label>
+						<div class="input-group">
+							{% block body_nom %}{% endblock %}
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="InputName">Genre*</label>
+						<div class="input-group">
+							{% block body_genre %}{% endblock %}
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="InputName">Nationalité*</label>
+						<div class="input-group">
+							{% block body_nationalite %}{% endblock %}
+						</div>
+					</div>
+				</div>
+		</div> 
+
+		<div class="col-sm-6 pull-right">   
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="InputName">Lieux Habités*</label>
+						<div class="input-group">
+							{% block body_lieux %}{% endblock %}
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="InputName">Date de Naissance*</label>
+						<div class="input-group">
+							{% block body_ddn %}{% endblock %}
+						</div>
+					</div>
+							
+					<div class="form-group">
+						<label for="InputName">Date de Mariage</label>
+						<div class="input-group">
+							{% block body_ddm %}{% endblock %}
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="InputName">Date de Décès</label>
+						<div class="input-group">
+							{% block body_ddd %}{% endblock %}
+						</div>
+					</div>
+					
+				</div>
+		</div>    
+    </div>
+
+
+    <input type="submit" name="validerModificationDonneesPerso" id="submit" value="Valider modifications" class="btn wow tada btn-embossed btn-primary pull-right">
+
+</form>
+{% endblock %}

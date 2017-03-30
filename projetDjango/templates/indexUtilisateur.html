@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<!--
+
+Ajouter animations
+
+-->
+
+<html> 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="Mes Aïeux">
+
+    <title>Mes Aïeux</title>
+
+    <!-- Feuille de style -->
+    {% load static %}
+    <link href="{% static 'my_app/cssPrincipal/feuilleMain.css' %}" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    {% load static %}
+    <link href="{% static 'my_app/cssPrincipal/bootstrap.min.css' %}" rel="stylesheet">
+	
+    <!-- Glyphicon -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ 
+
+
+</head>
+
+<body id="home">
+	
+	<!-- Main -->
+    <div class="home">
+		<div class="col-xs-12 text-center">
+			<h1 class="h1_home">Mes Aïeux</h1>
+			
+			<h3>Bonjour {% block body_identifiant %}{% endblock %} !</h3>
+			<form action="deconnexion">
+			<button type="submit" class="btn btn-default btn-sm">
+          	<span class="glyphicon glyphicon-log-out"></span> Log out
+        	</button>
+        	</form>
+		</div>    
+        <!-- Arrow -->
+		<div class="col-xs-12 text-center arrow" style="margin-top:50px;">
+			<div class="button_down"> 
+				<a class="imgcircle smoothScroll" href="#navbar">
+					{% load static %}
+					<img class="img_scroll" src="{% static 'my_app/img/icon/circle.png' %}" alt="">
+
+				</a>
+			</div>
+		</div>
+    </div>
+	
+	<!-- NavBar-->
+	<nav id="navbar" class="navbar-default" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand smoothScroll" href="#home">Mes Aïeux</a>
+			</div>
+
+			<div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+					<li class="menuItem" ><a  class="smoothScroll" href="#rechercherPersonne">Rechercher une personne</a></li>
+					<li class="menuItem"><a class="smoothScroll" href="#rechercherDocument">Rechercher un document</a></li>
+					<li class="menuItem"><a class="smoothScroll" href="#donneesPersonnelles">Données personnelles</a></li>
+					<li class="menuItem"><a href="deconnexion">
+          			<span class="glyphicon glyphicon-log-out"></span>
+        			</a></li>
+				</ul>
+			</div>
+		   
+		</div>
+	</nav> 
+	
+	
+	
+	<!-- Rechercher personne -->
+    <div id ="rechercherPersonne" class="content-section-a bg_color_gris_clair" class="smoothScroll">
+        <div class="container">
+		
+			<div class="col-md-6 col-md-offset-3 text-center wrap_title">
+				<h3>Rechercher une personne</h3>
+			</div>
+			
+            <div class="row">
+
+            <form class="" role="form" action="rechercherPersonne" method="post">
+            	{% csrf_token %}
+			
+				<div class="col-md-4 col-md-offset-2
+                			col-sm-6 col-xs-12" class="text-center">
+							<div class="form-group">
+								<label for="InputName">Nom</label>
+								<div class="input-group">
+									<input type="text" class="form-control" name="nom" placeholder="Nom">
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="InputName">Prénom</label>
+								<div class="input-group">
+									<input type="text" class="form-control" name="prenom" placeholder="Prénom">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="InputName">Genre</label>
+								<div class="input-group">
+									<input type="radio" name="genre" value="M"> M
+									<input type="radio" style="margin-left:20px;" name="genre" value="F"> F<br/>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="InputName">Nationalité</label>
+								<div class="input-group">
+									<input type="text" class="form-control" name="nationalite" placeholder="Nationalité">
+								</div>
+							</div>
+                </div>
+				
+                <div class="col-md-4 col-md-offset-2
+                			col-sm-6 col-xs-12 pull-right">   
+							<div class="form-group">
+								<label for="InputName">Lieux Habités</label>
+								<div class="input-group">
+									<input type="text" class="form-control" name="lieux" placeholder="Lieux Habités">
+								</div>
+							</div>	
+							
+							<div class="form-group">
+								<label for="InputName">Date de Naissance</label>
+								<div class="input-group">
+									<input type="text" class="form-control" name="ddn" placeholder="Date de Naissance">
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="InputName">Date de Mariage</label>
+								<div class="input-group">
+									<input type="text" class="form-control" name="ddm" placeholder="Date de Mariage">
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="InputName">Date de Décès</label>
+								<div class="input-group">
+									<input type="text" class="form-control"  name="ddd" placeholder="Date de Décès">
+								</div>
+							</div>
+							
+							<div class="form-group">
+							<label for="InputName"> </label>
+								<div class="input-group">
+									<input type="submit" name="Rechercher" value="Rechercher" class="btn wow tada btn-embossed btn-primary pull-right">
+								</div>
+							</div>	
+				</div> 
+				</form>	
+			</div>
+
+
+			<div id="row">
+				<div class="col-md-2 col-md-offset-5
+				col-xs-12 text-center"> 
+					<div class="form-group">
+						<form action="pageAjouterPersonne">
+							<div class="input-group">
+								<input type="submit" name="ajouterPersonne" value="Ajouter une personne" class="btn wow tada btn-embossed btn-primary">
+							</div>
+						</form>
+					</div>
+				</div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Fin Recherche Personne -->
+
+	
+	
+    <!-- Rechercher Document -->
+    <div id ="rechercherDocument" class="content-section-a bg_color_gris_fonce">
+        <div class="container">
+		
+			<div class="col-md-6 col-md-offset-3 text-center wrap_title">
+				<h3>Rechercher un document</h3>
+			</div>
+			
+            <div class="row">
+
+            <form class="" role="form" action="rechercherDocument" method="post">
+            	{% csrf_token %}
+
+			 
+				<div class="col-md-4 col-md-offset-2
+                			col-sm-6 col-xs-12">
+						<div class="form-group">
+							<label for="InputName">Titre</label>
+							<div class="input-group">
+								<input type="text" class="form-control" name="titre"  placeholder="Titre">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="InputName">Type du document</label>
+							<div class="input-group">
+							<select name="typeDocument">
+								<option value="" selected></option> 
+							  	<option value="image">Image</option> 
+							  	<option value="text">Texte</option>
+							</select>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="InputName">Année du document</label>
+							<div class="input-group">
+								<input type="text" class="form-control" name="anneeDocument"  placeholder="Année">
+							</div>
+						</div>
+                </div>
+				
+                <div class="col-md-4 col-md-offset-2
+                			col-sm-6 col-xs-12 pull-right"> 
+						<div class="form-group">
+							<label for="InputName">Mots Clefs</label>
+							<div class="input-group">
+								<input type="text" class="form-control"  name="motsClefs" placeholder="Mots Clefs">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="InputName">Personnes Liées</label>
+							<div class="input-group">
+								<input type="text" class="form-control" name="nomPl" placeholder="Nom"><br/><br/>
+								<input type="text" class="form-control" name="prenomPl"  placeholder="Prénom">
+							</div>
+						</div>	
+
+						<div class="form-group">
+						<label for="InputName"> </label>
+							<div class="input-group">
+								<input type="submit" value="Rechercher" class="btn wow tada btn-embossed btn-primary pull-right">
+							</div>
+						</div>	
+				</div>
+				</form>	
+			</div>
+
+
+			<div id="row">
+				<div class="col-md-2 col-md-offset-5
+				col-xs-12 text-center"> 
+					<div class="form-group">
+						<form action="pageAjouterDocument">
+							<div class="input-group">
+								<input type="submit" name="ajouterDocument" value="Ajouter un document" class="btn wow tada btn-embossed btn-primary">
+							</div>
+						</form>
+					</div>
+				</div>
+
+
+				</div> 		
+						
+            </div>
+        </div>
+
+
+    <!-- Données personnelles -->
+    <div id ="donneesPersonnelles" class="content-section-a bg_color_gris_clair" class="smoothScroll" style="padding-bottom:80px;">
+        <div class="container">
+		
+			<div class="col-md-6 col-md-offset-3 text-center wrap_title">
+				<h3>Données personnelles</h3>
+			</div>
+			
+            <div class="row">
+				<div class="col-md-4 col-md-offset-2
+                			col-sm-6 col-xs-12" class="text-center">
+							<div class="form-group">
+								<label for="InputName">Nom : </label>
+								{% block body_nom %}{% endblock %}
+							</div>
+							
+							<div class="form-group">
+								<label for="InputName">Prénom : </label>
+								{% block body_prenom %}{% endblock %}
+							</div>
+							
+							<div class="form-group">
+								<label for="InputName">Nationalité : </label>
+								{% block body_nationalite %}{% endblock %}
+							</div>
+							
+							<div class="form-group">
+								<label for="InputName">Genre : </label>
+								{% block body_genre %}{% endblock %}
+							</div>
+                </div>
+				
+                <div class="col-md-4 col-md-offset-2
+                			col-sm-6 col-xs-12 pull-right">   
+						<div class="form-group">
+							<label for="InputName">Lieux Habités : </label>
+								{% block body_lieux %}{% endblock %}
+						</div>
+
+						<div class="form-group">
+							<label for="InputName">Date de Naissance : </label>
+								{% block body_ddn %}{% endblock %}
+						</div>
+							
+						<div class="form-group">
+							<label for="InputName">Date de Mariage : </label>
+								{% block body_ddm %}{% endblock %}
+						</div>
+							
+						<div class="form-group">
+							<label for="InputName">Date de Décès : </label>
+								{% block body_ddd %}{% endblock %}
+						</div>
+				</div> 
+
+				<div class="col-sm-12 text-center">   
+                   <div class="form-group">
+                   	<a href="modifierDonneesPersonelles" class="btn tada btn-embossed btn-primary">
+                   		Modifier mes données
+						<!-- <input type="button" name="" id="submit" value="Modifier mes données" class="btn tada btn-embossed btn-primary"> -->
+					</a>
+					</div>
+				</div> 
+			</div>
+
+			<div class="row" style="margin-top:80px;">
+				<div class="col-md-6 col-md-offset-3 text-center wrap_title">
+					<h3>Ma famille</h3>
+				</div>
+			</div>
+
+
+			<div id="row">
+				<div class="col-md-2 col-md-offset-5
+				col-xs-12 text-center" style="margin-top:20px;">   
+                		<form action="pageRechercherFamille">
+								<div class="input-group">
+									<input type="submit" name="AjouterFamille" value="
+									{% block body_famille %}{% endblock %}" class="btn wow tada btn-embossed btn-primary">
+								</div>
+						</form>
+				</div>
+
+				<div class="col-sm-6 text-center" style="margin-top:20px;">   
+                	<div class="col-md-6">
+						{% block body_pere %}{% endblock %}
+					</div>
+				</div>
+				<div class="col-sm-6 text-center" style="margin-top:20px;">  
+					<div class="col-md-6">
+						{% block body_mere %}{% endblock %}
+					</div>
+				</div>
+
+				<!-- Arbre -->
+			</div>
+
+
+			<div id="row">
+				<div class="col-md-2 col-md-offset-5
+				col-xs-12 text-center" style="margin-top:50px;">  
+						<form action="visualiserArbre">
+								<div class="input-group">
+									<input type="submit" name="VisualiserArbre" value="Visualiser mon arbre" class="btn wow tada btn-embossed btn-primary">
+								</div>
+						</form>
+				</div>
+        </div>
+    </div>
+</div>
+    <!-- Fin Données personnelles -->
+
+
+   <div class="content-section-a" style="background-color: #646872;height:50px;">
+        <div class="container">
+            <div class="row">
+			</div> 		
+        </div>
+    </div>
+    <div class="content-section-a" style="background-color: #424650; height:200px;color:white;">
+        <div class="container">
+            <div class="row">
+            	<div class="col-md-4 col-md-offset-2
+                			col-sm-6 col-xs-12"> 
+					<h5 style="margin-top:50px;">Mes Aĩeux</h5>
+					<ul>
+						<li><a class="smoothScroll" href="#home" style="color:white;">Home</a></li>
+						<li><a class="smoothScroll" href="#rechercherPersonne" style="color:white;">Rechercher une personne</a></li>
+						<li><a class="smoothScroll" href="#rechercherDocument" style="color:white;">Rechercher un document</a></li>
+						<li><a class="smoothScroll" href="#donneesPersonnelles" style="color:white;">Données personnelles</a></li>
+					</ul>
+				</div>
+
+				<div class="col-md-4 col-md-offset-2
+                			col-sm-6 col-xs-12 pull-right" style="margin-top:50px;"> 
+					<div class="col-md-6">
+						Antoine Nguyen<br/>
+						Edouard Bornes<br/>
+						Cédric Souverain<br/>
+						Théo Weill
+					</div>
+				</div>
+			</div> 		
+        </div>
+    </div>
+
+
+
+	<!-- Javascript -->
+	{% load static %}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	{% load static %}
+	<script type="text/javascript" src="{% static 'my_app/js/animations.js' %}"></script>
+
+</body>
+
+</html>

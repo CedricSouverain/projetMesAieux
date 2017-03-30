@@ -1,0 +1,84 @@
+{%  extends 'templateBis.html' %}
+
+
+
+{% block body_titre %}
+	<h2 class="text-center">Ajouter une personne</h2>
+{% endblock %}
+
+
+{% block body_contenu %}
+<form class="" role="form" action="ajouterPersonne" method="post">
+{% csrf_token %}
+	<div class="col-sm-6" class="text-center">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="InputName">Prénom*</label>
+						<div class="input-group">
+							<input type="text" class="form-control" id="InputName" name="prenom" placeholder="Prénom" required>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="InputName">Nom*</label>
+						<div class="input-group">
+							<input type="text" class="form-control" id="InputName" name="nom" placeholder="Nom" required>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="InputName">Genre*</label>
+						<div class="input-group">
+							<input type="radio" name="genre" value="M" checked="checked"> M
+							<input type="radio" style="margin-left:20px;" name="genre" value="F"> F<br/>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="InputName">Nationalité*</label>
+						<div class="input-group">
+							<input type="text" class="form-control" id="InputName" name="nationalite" placeholder="Nationalité" required>
+						</div>
+					</div>
+				</div>
+		</div> 
+
+		<div class="col-sm-6 pull-right">   
+				<div class="col-md-6">
+					<div class="form-group">
+						<label for="InputName">Lieux Habités*</label>
+						<div class="input-group">
+							<input type="text" class="form-control" id="InputName" name="lieux" placeholder="Lieux habités" required>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="InputName">Date de Naissance*</label>
+						<div class="input-group">
+							<input type="text" class="form-control" name="ddn" id="InputName" placeholder="Date de Naissance" required>
+						</div>
+					</div>
+							
+					<div class="form-group">
+						<label for="InputName">Date de Mariage</label>
+						<div class="input-group">
+							<input type="text" class="form-control" name="ddm" id="InputName" placeholder="Date de Mariage">
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="InputName">Date de Décès</label>
+						<div class="input-group">
+							<input type="text" class="form-control" name="ddd" id="InputName" placeholder="Date de Décès">
+						</div>
+					</div>
+					
+				</div>
+		</div>    
+    </div>
+
+
+    <input type="submit" name="validerAjout" value="Ajouter" class="btn wow tada btn-embossed btn-primary pull-right">
+
+</form>
+{% endblock %}

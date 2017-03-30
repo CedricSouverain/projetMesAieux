@@ -1,0 +1,17 @@
+## Documentation du projet Django Mes Aîeux
+
+# Pour lancer le projet 
+1 - Se rendre dans le dossier "projetDjango" à l'aide du terminal
+2 - Entrez "python manage.py runserver". Cette commande va créer un serveur local 
+qui permettra de visualiser le site inernet.
+3 - Aller sur votre navigateur, et taper l'adresse "localhost:8000". 
+Vous serez accueilli sur la page du site.
+
+# Où se trouve la page HTML ?
+Le fichier html se trouve dans : \templates
+
+# Où se trouve les fichiers CSS et JS ?
+Les fichiers CSS, JS et les images se trouvent dans : \static\my_app
+
+# Où se trouve la base de données SQL ?
+Les requêtes SQL se trouvent dans le fichier : mesaieuxDatabase.sql

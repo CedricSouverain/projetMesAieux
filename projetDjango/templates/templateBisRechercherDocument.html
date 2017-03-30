@@ -1,0 +1,73 @@
+{%  extends 'templateBis.html' %}
+
+
+
+{% block body_titre %}
+	<h2 class="text-center">Rechercher un document</h2>
+{% endblock %}
+
+
+{% block body_contenu %}
+
+	<div class="col-sm-4" class="text-center">
+		<form role="form" action="rechercherDocument" method="post">
+			{% csrf_token %}
+
+			<div class="form-group">
+				<label for="InputName">Titre</label>
+				<div class="input-group">
+					<input type="text" class="form-control" name="titre"  placeholder="Titre">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="InputName">Type du document</label>
+				<div class="input-group">
+				<select name="typeDocument">
+					<option value="" selected></option> 
+				  	<option value="image">Image</option> 
+				  	<option value="text">Texte</option>
+				</select>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="InputName">Année du document</label>
+				<div class="input-group">
+					<input type="text" class="form-control" name="anneeDocument"  placeholder="Année">
+				</div>
+			</div>
+							
+			<div class="form-group">
+				<label for="InputName">Mots Clefs</label>
+				<div class="input-group">
+					<input type="text" class="form-control"  name="motsClefs" placeholder="Mots Clefs">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="InputName">Personnes Liées</label>
+				<div class="input-group">
+					<input type="text" class="form-control" name="nomPl" placeholder="Nom"><br/><br/>
+					<input type="text" class="form-control" name="prenomPl"  placeholder="Prénom">
+				</div>
+			</div>
+							
+			<div class="form-group">
+				<label for="InputName"> </label>
+				<div class="input-group">
+					<input type="submit" value="Rechercher" class="btn wow tada btn-embossed btn-primary">
+				</div>
+			</div>	
+		</form>				
+	</div> 
+
+
+
+	<div class="col-sm-8" class="text-center">
+		<h3>Résultat</h3>
+		{{ droite_resultat|safe }}
+	</div>
+
+
+{% endblock %}
